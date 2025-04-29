@@ -9,49 +9,44 @@ from datetime import datetime
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for all routes
+CORS(app)
 
-# Configuration
-app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY', 'default-secret-key')
 
-# MongoDB Connection Setup
-MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/')  # Example default
+app.config['SECRET_KEY'] = os.getenv('FLASK_SECRET_KEY')
+MONGO_URI = os.getenv('MONGO_URI')
 client = MongoClient(MONGO_URI)
-db = client['contact_db']  # Database name
-contacts_collection = db['contacts']  # Collection name
+db = client['contact_db']
+contacts_collection = db['contacts']
 
 @app.route('/api/contact', methods=['POST'])
 def handle_contact():
     try:
         data = request.get_json()
         
-        # Validate required fields
         required_fields = ['name', 'email', 'message']
         for field in required_fields:
             if field not in data or not data[field].strip():
                 return jsonify({'error': f'{field} is required'}), 400
-        
-        # Prepare document to insert
+
         contact_document = {
             'name': data['name'],
             'email': data['email'],
+            'subject': data.get('subject', ''),
             'message': data['message'],
-            'submitted_at': datetime.utcnow()  # Save the timestamp
+            'submitted_at': datetime.utcnow()
         }
-        
-        # Insert into MongoDB
-        contacts_collection.insert_one(contact_document)
-        
-        print(f"New contact saved: {contact_document}")  # For debugging
-        
+
+        result = contacts_collection.insert_one(contact_document)
+        print(f"Document inserted with ID: {result.inserted_id}")
+
         return jsonify({
             'success': True,
-            'message': 'Thank you for your message! We will get back to you soon.'
+            'message': 'Thank you for your message!'
         })
-    
-    except Exception as e:
-        print(f"Error processing contact form: {str(e)}")
-        return jsonify({'error': 'An error occurred while processing your request'}), 500
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    except Exception as e:
+        print(f"Error: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0', port=5000)

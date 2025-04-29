@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin } from 'react-icons/fa';
 import './ContactPage.css';
 
 const ContactPage = () => {
@@ -46,8 +45,6 @@ const ContactPage = () => {
 
   return (
     <div className="contact-container">
-      {/* ... existing contact info cards ... */}
-
       <form className="contact-form" onSubmit={handleSubmit}>
         <h2>Send Us a Message</h2>
         
@@ -84,12 +81,12 @@ const ContactPage = () => {
             required 
           />
         </div>
-        
+
         <div className="form-group">
           <input 
             type="text" 
             name="subject"
-            placeholder="Subject" 
+            placeholder="Subject"
             value={formData.subject}
             onChange={handleChange}
           />
