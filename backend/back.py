@@ -48,5 +48,37 @@ def handle_contact():
         print(f"Error: {str(e)}")
         return jsonify({'error': str(e)}), 500
 
+# New collection for ratings
+ratings_collection = db['ratings']
+
+@app.route('/api/rate', methods=['POST'])
+def submit_rating():
+    try:
+        data = request.get_json()
+        print("Received data:", data)  # <== ADD THIS LINE
+
+        required_fields = ['member_name', 'rating', 'message']
+        for field in required_fields:
+            if field not in data or not data[field]:
+                return jsonify({'error': f'{field} is required'}), 400
+        
+        # Insert the rating into MongoDB
+        rating_document = {
+            'member_name': data['member_name'],
+            'rating': int(data['rating']),  # Make sure rating is integer
+            'message': data['message'],
+            'submitted_at': datetime.utcnow()
+        }
+
+        ratings_collection.insert_one(rating_document)
+
+        print(f"✅ New rating inserted: {rating_document}")
+        return jsonify({'success': True, 'message': 'Rating submitted!'}), 201
+
+    except Exception as e:
+        print(f"❌ Error processing rating: {str(e)}")
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=5000)

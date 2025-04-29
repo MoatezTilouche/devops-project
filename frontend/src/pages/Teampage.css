@@ -158,3 +158,107 @@ h1::after {
     font-size: 2rem;
   }
 }
+
+.rate-btn {
+  background: none;
+  border: none;
+  color: #ffc107;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.popup-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  font-size: 32px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.star.active {
+  color: #ffc107;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  resize: none;
+  font-family: inherit;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.submit-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+
+.submit-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.later-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+}
+/* Overlay background */
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content box */
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
