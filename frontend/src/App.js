@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TeamPage from './pages/Teampage';
 import Navigation from './pages/Navigation';
 import ContactPage from './pages/ContactPage';
+import CommunityPage from './pages/CommunityPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<TeamPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/community" element={<CommunityPage />} />
         </Routes>
       </div>
     </Router>

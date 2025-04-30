@@ -16,3 +16,9 @@
 {"t":{"$date":"2025-04-29T19:24:26.297Z"},"s":"I","c":"MONGOSH-SNIPPETS","id":1000000019,"ctx":"snippets","msg":"Loaded snippets","attr":{"installdir":"/data/db/.mongodb/mongosh/snippets"}}
 {"t":{"$date":"2025-04-29T19:24:26.306Z"},"s":"I","c":"MONGOSH-SNIPPETS","id":1000000027,"ctx":"snippets","msg":"Fetching snippet index done"}
 {"t":{"$date":"2025-04-29T19:24:26.311Z"},"s":"I","c":"MONGOSH","id":1000000002,"ctx":"repl","msg":"Started REPL","attr":{"version":"2.5.0"}}
+{"t":{"$date":"2025-04-29T19:24:30.137Z"},"s":"I","c":"MONGOSH","id":1000000008,"ctx":"shell-api","msg":"Used \"use\" command","attr":{"db":"contact_db"}}
+{"t":{"$date":"2025-04-29T19:24:32.309Z"},"s":"I","c":"MONGOSH","id":1000000007,"ctx":"repl","msg":"Evaluating input","attr":{"input":"db.rating.find().pretty()"}}
+{"t":{"$date":"2025-04-29T19:24:32.378Z"},"s":"I","c":"MONGOSH","id":1000000011,"ctx":"shell-api","msg":"Performed API call","attr":{"method":"find","class":"Collection","db":"contact_db","coll":"rating","arguments":{"options":{}}}}
+{"t":{"$date":"2025-04-29T19:25:21.101Z"},"s":"I","c":"MONGOSH","id":1000000007,"ctx":"repl","msg":"Evaluating input","attr":{"input":"db.ratings.find().pretty()"}}
+{"t":{"$date":"2025-04-29T19:25:21.107Z"},"s":"I","c":"MONGOSH","id":1000000011,"ctx":"shell-api","msg":"Performed API call","attr":{"method":"find","class":"Collection","db":"contact_db","coll":"ratings","arguments":{"options":{}}}}
+{"t":{"$date":"2025-04-29T19:26:50.123Z"},"s":"I","c":"MONGOSH","id":1000000045,"ctx":"analytics","msg":"Flushed outstanding data","attr":{"flushError":"Trying to persist throttle state before userId is set","flushDuration":0}}

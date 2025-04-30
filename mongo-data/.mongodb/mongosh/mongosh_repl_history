@@ -3,4 +3,5 @@ db.rating.find().pretty()
 use contact_db
 db.rating.find().pretty()
 use rating_collection
-db.contacts.fin
+db.contacts.find().pretty()
+use contact_db

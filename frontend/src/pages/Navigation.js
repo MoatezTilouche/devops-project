@@ -7,7 +7,9 @@ const Navigation = () => {
     <nav className="main-nav">
       <ul>
         <li><Link to="/team">Our Team</Link></li>
+        <li><Link to="/community">Community</Link></li>
         <li><Link to="/contact">Contact</Link></li>
+
       </ul>
     </nav>
   );

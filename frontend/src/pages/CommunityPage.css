@@ -1,0 +1,124 @@
+.feed-container {
+  max-width: 1000px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.feed-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.new-post {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.new-post img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.new-post textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+}
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #888;
+}
+.tabs input {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.post {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.post-header img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.post-meta {
+  font-size: 13px;
+  color: #666;
+}
+.post-content {
+  margin: 10px 0;
+  font-size: 15px;
+}
+.post-actions {
+  display: flex;
+  gap: 15px;
+  font-size: 13px;
+  color: #888;
+}
+.post-actions a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.new-post input,
+.new-post textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.new-post button {
+  background-color: #4caf50;
+  border: none;
+  padding: 10px 16px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reply-box {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.reply-box input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.reply-box button {
+  background: #007bff;
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.post-replies {
+  margin: 20px;
+}
