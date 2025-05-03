@@ -46,13 +46,16 @@ devops-project/
 - Rating popup for team members (stars + optional message)
 
 ### 🔹 Backend API (Flask)
-| Endpoint                     | Method | Description                      |
-|-----------------------------|--------|----------------------------------|
-| `/api/post`                 | GET    | Fetch all posts                  |
-| `/api/post`                 | POST   | Create a new post                |
-| `/api/post/<id>`            | DELETE | Delete a post                    |
-| `/api/post/<id>/response`   | POST   | Add a response to a post         |
-| `/api/rate`                 | POST   | Submit a member rating           |
+| Endpoint                         | Method | Description                             | Request Body Fields                            |
+|----------------------------------|--------|-----------------------------------------|------------------------------------------------|
+| `/api/contact`                  | POST   | Submit a contact message                | `name`, `email`, `subject (optional)`, `message`|
+| `/api/rate`                     | POST   | Rate a team member                      | `member_name`, `rating`, `message`             |
+| `/api/post`                     | GET    | Fetch all community posts               | –                                              |
+| `/api/post`                     | POST   | Create a new community post             | `auteur`, `subject`, `description`             |
+| `/api/post/<post_id>`          | GET    | Get a specific post by ID               | –                                              |
+| `/api/post/<post_id>/response` | POST   | Add a reply to a post                   | `author`, `message`                            |
+| `/api/post/<post_id>`          | DELETE | Delete a specific post                  | –                                              |
+
 
 ### 🔹 Frontend (React)
 - Pages: `TeamPage.js`, `ContactPage.js`, `CommunityPage.js`
